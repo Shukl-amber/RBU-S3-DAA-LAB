@@ -1,5 +1,4 @@
 #include <bits/stdc++.h>
-
 using namespace std;
 typedef long long ll;
 
@@ -19,9 +18,10 @@ int main()
 
     for (ll i = 0; i < connections; i++)
     {
-        printf("\nConnection No %d From: To: And Cost: ", i + 1);
-        int j, k;
-        cin >> j >> k >> arr[j][k];
+        printf("\nConnection No %lld From: To: And Cost: ", i + 1);
+        int j, k, cost;
+        cin >> j >> k >> cost;
+        arr[j][k] = cost;
     }
 
     vector<ll> bcost(nodes, INT_MAX), prev(nodes, -1), path(nodes, -1);
