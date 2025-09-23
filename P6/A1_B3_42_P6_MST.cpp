@@ -45,7 +45,7 @@ int main()
     cout << endl;
 
     ll curr = nodes - 2;
-    path[0] = 0;
+    path[nodes - stages] = 0;
     path[nodes - 1] = nodes - 1;
 
     for (ll i = nodes - 2; i > nodes - stages; i--)
