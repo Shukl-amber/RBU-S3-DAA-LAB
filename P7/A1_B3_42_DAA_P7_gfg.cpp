@@ -24,16 +24,11 @@ public:
                 int best = INT_MAX;
 
                 for (int r = i; r <= j; r++)
-                {
-                    int leftCost = dp[i][r - 1];
-                    int rightCost = dp[r + 1][j];
-                    best = min(best, leftCost + rightCost + totalFreq);
-                }
+                    best = min(best, dp[i][r - 1] + dp[r + 1][j] + totalFreq);
 
                 dp[i][j] = best;
             }
         }
-
         return dp[0][n - 1];
     }
 };
