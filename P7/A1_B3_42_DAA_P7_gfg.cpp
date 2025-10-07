@@ -1,9 +1,11 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Solution {
-  public:
-    int optimalSearchTree(int keys[], int freq[], int n) {
+class Solution
+{
+public:
+    int optimalSearchTree(int keys[], int freq[], int n)
+    {
         vector<vector<int>> dp(n, vector<int>(n, 0));
         vector<int> prefix(n + 1, 0);
 
@@ -23,8 +25,8 @@ class Solution {
 
                 for (int r = i; r <= j; r++)
                 {
-                    int leftCost = (r > i) ? dp[i][r - 1] : 0;
-                    int rightCost = (r < j) ? dp[r + 1][j] : 0;
+                    int leftCost = dp[i][r - 1];
+                    int rightCost = dp[r + 1][j];
                     best = min(best, leftCost + rightCost + totalFreq);
                 }
 
